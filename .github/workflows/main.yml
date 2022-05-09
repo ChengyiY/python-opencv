@@ -27,6 +27,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          push: true
           platforms: linux/amd64,linux/arm64
-          tags: python-opencv:dev
+          push: true          
+          tags: ycy1986/python-opencv:dev
