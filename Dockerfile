@@ -6,6 +6,8 @@ LABEL Author="ycy <JG5BVICTOR@126.com>"
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*\
+    && libgl1\
+    && libglib2.0-0\
     && pip install opencv-python
 
 # Create a non-root user
