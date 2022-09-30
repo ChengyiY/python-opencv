@@ -12,4 +12,4 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && rm -rf /var/lib/apt/lists/*\
     && pip install opencv-python
 
-  
+RUN echo "source /opt/ros/galactic/setup.bash" >> /root/.bashrc
