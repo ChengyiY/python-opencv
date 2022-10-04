@@ -11,7 +11,7 @@ RUN groupadd --gid 1000 ros \
 # install Python-opencv
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
-    python3-pip\
+    python3-pip\    
     && rm -rf /var/lib/apt/lists/*\    
-    && pip install opencv-python
+    && pip install opencv-python-headless
 
