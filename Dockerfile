@@ -13,5 +13,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
     python3-pip\    
     && rm -rf /var/lib/apt/lists/*\    
-    && pip install opencv-python-headless
+    && pip install opencv-python-headless\
+    && pip install ros-galactic-cv-bridge
 
