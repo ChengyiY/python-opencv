@@ -14,6 +14,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     python3-pip\ 
     # libboost-python-dev\
     # git\
+    ros-galactic-tf-transformations\
     && rm -rf /var/lib/apt/lists/*\    
     && pip install opencv-python-headless
   
