@@ -20,7 +20,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 #git 
 RUN cd /opt/ros/galactic/src
-RUN git colne https://github.com/ros-perception/vision_opencv.git -b ros2
+RUN git clone https://github.com/ros-perception/vision_opencv.git -b ros2
 RUN cd ..
 RUN colcon build --symlink-install
 
