@@ -13,7 +13,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
     python3-pip\    
     && rm -rf /var/lib/apt/lists/*\    
-    && pip install opencv-python-headless\
+    && pip install opencv-python-headless
 
 # Copy cv_bridge to docker
-COPY cv_bridge /opt/ros/galactic/lib/python3.8/site-packages/
+COPY ./cv_bridge /opt/ros/galactic/lib/python3.8/site-packages/
