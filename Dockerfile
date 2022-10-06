@@ -14,8 +14,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     python3-pip\ 
     libboost-python\
     && rm -rf /var/lib/apt/lists/*\    
-    && pip install opencv-python-headless\
-    && pip install git
+    && pip install opencv-python-headless
+  
 
 #git 
 RUN cd /opt/ros/galactic/src
