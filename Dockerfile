@@ -11,11 +11,20 @@ RUN groupadd --gid 1000 ros \
 # install Python-opencv
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
-    python3-pip\    
+    python3-pip\ 
+    libboost-python\
+    git\
     && rm -rf /var/lib/apt/lists/*\    
     && pip install opencv-python-headless
 
+#git 
+RUN cd /opt/ros/galactic/src
+RUN git colne https://github.com/ros-perception/vision_opencv.git -b ros2
+RUN cd ..
+RUN colcon build --symlink-install
+
+
 # Copy cv_bridge to docker
 #COPY ./cv_bridge /opt/ros/galactic/lib/python3.8/site-packages/
-COPY ./cv_bridge /opt/ros/galactic/lib/python3.8/site-packages/cv_bridge
-COPY ./cv_bridge/boost /opt/ros/galactic/lib/python3.8/site-packages/cv_bridge/boost
+#COPY ./cv_bridge /opt/ros/galacticlib/python3.8/site-packages/cv_bridge
+#COPY ./cv_bridge/boost /opt/ros/galactic/lib/python3.8/site-packages/cv_bridge/boost
