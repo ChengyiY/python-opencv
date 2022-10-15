@@ -1,5 +1,6 @@
 # Basic image
 FROM ros:galactic AS ros
+FROM zhuoqiw/ros-opencv:${CODENAME}-4.5.5 AS opencv
 LABEL Author="ycy <JG5BVICTOR@126.com>"
 
 # Create a non-root user
