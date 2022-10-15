@@ -1,8 +1,11 @@
 # Basic image
 FROM ros:galactic AS ros
-FROM zhuoqiw/ros-opencv:${CODENAME}-4.5.5 AS opencv
+FROM zhuoqiw/ros-opencv:4.5.5 AS opencv
 LABEL Author="ycy <JG5BVICTOR@126.com>"
 
+COPY --from=opencv /opt/opencv /opt/opencv
+RUN echo "/opt/opencv/lib" >> /etc/ld.so.conf.d/opencv.conf \
+    && ldconfig
 # Create a non-root user
 RUN groupadd --gid 1000 ros \
     && useradd -s /bin/bash --uid 1000 --gid 1000 -m ros \
