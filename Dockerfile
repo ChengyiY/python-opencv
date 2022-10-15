@@ -1,6 +1,7 @@
 # Basic image
-FROM ros:galactic AS ros
+
 FROM zhuoqiw/ros-opencv:4.5.5 AS opencv
+FROM ros:galactic AS ros
 LABEL Author="ycy <JG5BVICTOR@126.com>"
 
 COPY --from=opencv /opt/opencv /opt/opencv
